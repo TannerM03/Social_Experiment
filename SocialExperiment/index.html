@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/baa2012f1c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <!-- <img src="images/logo.png" class="logo"> -->
+            <div class="logo">SocialNetwork</div>
+            <ul>
+                <li><img src="images/notification.png"></li>
+                <li><img src="images/inbox.png"></li>
+                <li><img src="images/video.png"></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="images/search.png">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="nav-user-icon online" onclick= "settingsMenuToggle()">
+                <img src="images/tannerProfile.jpg">
+            </div>
+        </div>
+        <!---settings-menu-->
+
+        <div class="settings-menu">
+
+            <div id="dark-btn" class = "dark-btn-on">
+                <span></span>
+            </div>
+
+            <div class="settings-menu-inner">
+                <div class="user-profile">
+                    <img src="images/tannerProfile.jpg">
+                    <div>
+                        <p>Tanner Macpherson</p>
+                        <a href="#">See your profile</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-profile">
+                    <img src="images/feedback.png">
+                    <div>
+                        <p>Give Feedback</p>
+                        <a href="#">Help us to improve the new design</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="settings-links">
+                    <img src="images/setting.png" class="settings-icon">
+                    <a href="#">Settings & Privacy <img src="images/arrow.png" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="images/help.png" class="settings-icon">
+                    <a href="#">Help & Support<img src="images/arrow.png" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="images/display.png" class="settings-icon">
+                    <a href="#">Display & Accessibility <img src="images/arrow.png" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="images/logout.png" class="settings-icon">
+                    <a href="#">Logout <img src="images/arrow.png" width="10px"></a>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container">
+        <!---left-sidebar-->
+        <div class="left-sidebar">
+            <div class="imp-links">
+                <a href="#"><img src="images/news.png">Latest News</a>
+                <a href="#"><img src="images/friends.png">Friends</a>
+                <a href="#"><img src="images/group.png">Group</a>
+                <a href="#"><img src="images/marketplace.png">Marketplace</a>
+                <a href="#"><img src="images/watch.png">Watch</a>
+            </div>
+            <div class="shortcut-links">
+                <p>Your Shortcuts</p>
+                <a href="#"><img src="images/shortcut-1.png">Web Developers</a>
+                <a href="#"><img src="images/shortcut-2.png">Web Design Course</a>
+                <a href="#"><img src="images/shortcut-3.png">Full Stack Development</a>
+                <a href="#"><img src="images/shortcut-4.png">Website Experts</a>
+
+            </div>
+        </div>
+        <!---main-content-->
+
+        <div class="main-content">
+
+            <div class="story-gallery">
+                <div class="story story1" onclick = openYourStory()>
+                    <p>Your Story</p>
+                </div>
+                <div class="story-open"></div>
+                <div class="story story2" onclick = openStory1()>
+                    <img src="images/danteProfile.jpeg">
+                    <p>Dante Tekampe</p>
+                </div>
+                <div class="story story3" onclick = openStory2()>
+                    <img src="images/blakeProfile.jpg">
+                    <p>Blake Wandersee</p>
+                </div>
+                <div class="story story4" onclick = openStory3()>
+                    <img src="images/joyProfile 5.45.29 PM.jpg">
+                    <p>Joy Shaver</p>
+                </div>
+                <div class="story story5" onclick = openStory4()>
+                    <img src="images/logan_profile.jpg">
+                    <p>Logan Aimone</p>
+                </div>
+            </div>
+
+            <div class="write-post-container">
+
+                <div class="user-profile">
+                    <img src="images/tannerProfile.jpg">
+                    <div>
+                        <p>Tanner Macpherson</p>
+                    </div>
+                    <button class="post-image">POST</button>
+                </div>
+
+                <div class="post-input-container">
+                    <textarea rows="3" placeholder = "Type caption here"></textarea>
+                    <div class="add-post-links">
+                        <p class="add-photo">Add photo</p>
+                        <a href="#"><img src="images/photo.png">  </a>
+                        
+                        <input type="file" id = "image_input" accept = "image/jpg, image/png">
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- new post container for what the user decides to post -->
+            <div class="new-post-container" style = "display: none;" >
+                <div class="post-row-new">
+                    <div class="user-profile-new">
+                        <img src="images/tannerProfile.jpg">
+                        <div>
+                            <p>Tanner Macpherson</p>
+                            <span>just now</span>
+                        </div>
+                    </div>
+                    <button class="delete-post">DELETE</btn>
+                    <!-- <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a> -->
+                </div>
+                <p class="post-text-new">
+                </p>
+                <!-- need to add the caption -->
+                <!-- add the image too -->
+                <img src="" class="post-img-new">
+
+
+                <div class="comment-container">
+                    <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+                    <input type="text" class="comments-input" placeholder = "Write a comment!"> 
+                    <button class="comment-enter">Enter</button>
+                    <div class="user-comment">
+                        <img src="images/tannerProfile.jpg" class="comment-profile">
+                        <p class="user-comment-text"></p>
+                    </div>
+                </div>
+                    <div class="activity-icons">
+                        <div class="like-container">
+                        <img src="images/like.png" class="like1" alt="Unliked" >
+                        <img src="images/like-blue.png" class="like2" alt="Liked" style="display: none;" >
+                        <input type="text" class = "like-counter" value = "0"/>
+                        <img src="images/comments.png" class="comment">
+                            <input type="text" class="comment-counter" value = "0">
+                        </div>
+                    </div>
+            </div>
+            <!-- posts that are already loaded in -->
+            <div class="post-container" id = "original-post">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="images/blakeProfile.jpg">
+                        <div>
+                            <p>Blake Wandersee</p>
+                            <span>July 17 2023, 5:12 pm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="post-text">Had a blast 
+                    today in the mountains!
+                </p>
+                <img src="images/blake_post.jpg" class="post-img">
+                <div class="comment-container">
+                    <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+                    <input type="text" class="comments-input" placeholder = "Write a comment!"> 
+                    <button class="comment-enter">Enter</button>
+                    <div class="user-comment">
+                        <img src="images/tannerProfile.jpg" class="comment-profile">
+                        <p class="user-comment-text"></p>
+                    </div>
+                </div>
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div class="like-container">
+                        <img src="images/like.png" class="like1" alt="Unliked" >
+                        <img src="images/like-blue.png" class="like2" alt="Liked" style="display: none;" >
+                        <input type="text" class = "like-counter" value = "498"/>
+                        <img src="images/comments.png" class="comment">
+                            <input type="text" class="comment-counter" value = "0">
+                        </div>
+                    </div>
+         
+                    <div class="post-profile-icon">
+                        <img src="images/tannerProfile.jpg">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="images/joyProfile 5.45.29 PM.jpg">
+                        <div>
+                            <p>Joy Shaver</p>
+                            <span>June 21 2023, 4:33 am</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="post-text"> Happy birthday to the wind beneath my feet, my inspiration: Phoebe,
+                    my beloved cat! 
+                    <a href="#"></a> <a href="#"></a>
+                </p>
+                <img src="images/joy_post.jpg" class="post-img">
+
+                <div class="comment-container">
+                    <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+                    <input type="text" class="comments-input" placeholder = "Write a comment!"> 
+                    <button class="comment-enter">Enter</button>
+                    <div class="user-comment">
+                        <img src="images/tannerProfile.jpg" class="comment-profile">
+                        <p class="user-comment-text"></p>
+                    </div>
+                </div>
+                    <div class="activity-icons">
+                        <div class="like-container">
+                            <img src="images/like.png" class="like1" alt="Unliked">
+                            <img src="images/like-blue.png" class="like2" alt="Liked" style="display: none;">
+                            <input type="text" class = "like-counter" value = "220"/>
+                            <img src="images/comments.png" class="comment">
+                            <input type="text" class="comment-counter" value = "0">
+                            </div>
+
+                    </div>
+
+            </div>
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="images/logan_profile.jpg">
+                        <div>
+                            <p>Logain Aimone</p>
+                            <span>June 06 2023, 2:38 pm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="post-text"> Went to my sister's wedding last weekend and 
+                    had a blast dancing with Grandma! So great to see everyone! 
+                </p>
+                <img src="images/logan_post.jpg" class="post-img">
+
+                <div class="comment-container">
+                    <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+                    <input type="text" class="comments-input" placeholder = "Write a comment!"> 
+                    <button class="comment-enter">Enter</button>
+                    <div class="user-comment">
+                        <img src="images/tannerProfile.jpg" class="comment-profile">
+                        <p class="user-comment-text"></p>
+                    </div>
+                </div>
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div class="like-container">
+                            <img src="images/like.png" class="like1" alt="Unliked">
+                            <img src="images/like-blue.png" class="like2" alt="Liked" style="display: none;">
+                            <input type="text" class = "like-counter" value = "1203"/>
+                            <img src="images/comments.png" class="comment">
+                            <input type="text" class="comment-counter" value = "0">
+                            </div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="images/tannerProfile.jpg">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="images/danteProfile.jpeg">
+                        <div>
+                            <p>Dante Tekampe</p>
+                            <span>February 18 2023, 9:02 pm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="post-text">Polar plunge with <span>@blake_wandersee</span>! 
+                </p>
+                <img src="images/dante_post.jpg" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div class="like-container">
+                            <img src="images/like.png" class="like1" alt="Unliked">
+                            <img src="images/like-blue.png" class="like2" alt="Liked" style="display: none;">
+                            <input type="text" class = "like-counter" value = "92"/>
+                            <img src="images/comments.png" class="comment">
+                            <input type="text" class="comment-counter" value = "0">
+                            </div>
+
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="images/tannerProfile.jpg">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+
+            </div>
+        
+
+            <!-- <button class="load-more-button"type="button">Load More</button> -->
+
+
+
+        </div>
+
+        <!---right-sidebar-->
+
+        <div class="right-sidebar">
+
+            <div class="sidebar-title">
+                <h4>Events</h4>
+            </div>
+            <!-- reminders popup menu -->
+            <div class="reminders">
+                <div class="left-event">
+                    <h3>30</h3>
+                    <span>September</span>
+                </div>
+                <div class="right-event">
+                    <h4>Carolina Data Challenge</h4>
+                    <p><i class="fa-solid fa-map-location-dot"></i> Sitterson Hall</p>
+                    <h1>Description</h1>
+                    
+                </div>
+                <small>Weekend long data science hackathon hosted by Carolina 
+                    Analytics and Data Science. 
+                    Will be working on projects, interacting with sponsors, and 
+                    learning new skills
+                </small>
+                <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+            </div>
+            <div class="reminders">
+                <div class="left-event">
+                    <h3>16</h3>
+                    <span>December</span>
+                </div>
+                <small>Surprise birthday party for dad with the fam at grandma's house!
+                    Need to get balloons and start setting up at 4:00pm
+                </small>
+                <div class="right-event">
+                    <h4>Dad's Birthday</h4>
+                    <p><i class="fa-solid fa-map-location-dot"></i> Wilmington, NC</p>
+                    <h1>Description</h1>
+                    
+                </div>
+            
+                <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+            </div>
+            <div class="event">
+                <div class="left-event">
+                    <h3>30</h3>
+                    <span>September</span>
+                </div>
+                <div class="right-event">
+                    <h4>Carolina Data Challenge</h4>
+                    <p><i class="fa-solid fa-map-location-dot"></i> Sitterson Hall</p>
+                    <a href="#">More Info</a>
+                </div>
+            </div>
+            <div class="event">
+                <div class="left-event">
+                    <h3>16</h3>
+                    <span>December</span>
+                </div>
+                <div class="right-event">
+                    <h4>Dad's Birthday</h4>
+                    <p><i class="fa-solid fa-map-location-dot"></i> Wilmington, NC</p>
+                    <a href="#">More Info</a>
+                </div>
+            </div>
+            <div class="sidebar-title">
+                <h4>Advertisement</h4>
+            </div>
+            <img src="images/advertisement.png" class="sidebar-ads">
+
+            <div class="sidebar-title">
+                <h4>Conversation</h4>
+            </div>
+
+            <div class="online-list">
+                <div class="online">
+                    <a href="#"><img src="images/danteProfile.jpeg"></a>
+                </div>
+                <p>Dante Tekampe</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <a href="#"><img src="images/blakeProfile.jpg"></a>
+                </div>
+                <p>Blake Wandersee</p>
+            </div><div class="online-list">
+                <div class="online">
+                    <a href="#"><img src="images/joyProfile 5.45.29 PM.jpg"></a>
+                </div>
+                <p>Joy Shaver</p>
+            </div>
+
+            <!-- Conversations pop-up menu -->
+            <div class="conversations">
+                        <img src="images/danteProfile.jpeg" id = "popup-image">
+                    <p>Dante Tekampe</p>
+                    <div class="text-bubble-user-container"></div>
+                    <input class = "conversations-input" type="text" placeholder = "Send a message!">
+                    <div class="text-bubble">Wanna go to the gym tomorrow?</div>
+                    <button class = "conversations-enter">Enter</button>
+                <div class="conversations-close">
+                    <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+                </div>                
+            </div>
+            <div class="conversations">
+                        <img src="images/blakeProfile.jpg" id = "popup-image">
+                    <p>Blake Wandersee</p>
+                    <input class = "conversations-input" type="text" placeholder = "Send a message!">
+                    <div class="text-bubble">You'll never guess what I just saw!</div>
+                    <div class="text-bubble-user-container">
+                    </div>
+                    <button class = "conversations-enter">Enter</button>
+                <div class="conversations-close">
+                    <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+                </div>                
+            </div>
+            <div class="conversations">
+                        <img src="images/joyProfile 5.45.29 PM.jpg" id = popup-image>
+                    <p>Joy Shaver</p>
+                    <input class = "conversations-input" type="text" placeholder = "Send a message!">
+                    <div class="text-bubble">How was your day today?</div>
+                    <div class="text-bubble-user-container">
+                    </div>
+                    <button class = "conversations-enter">Enter</button>
+                <div class="conversations-close">
+                    <a href="#"><i class="fa-regular fa-rectangle-xmark"></i></a>
+                </div>                
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="footer">
+        <p>Copyright 2023 - Tanner Macpherson</p>
+    </div>
+
+<script src="script.js" ></script>
+<!-- <script src="post.js" ></script> -->
+
+</body>
+</html>

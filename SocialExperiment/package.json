@@ -1,0 +1,12 @@
+{
+  "name": "socialexperiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "post.js",
+  "scripts": {
+    "build": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
